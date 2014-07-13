@@ -14,6 +14,7 @@ import android.widget.ViewFlipper;
 
 public class FirstActivity extends Activity{
 	private float cMoveSpace = 100;
+	private int viewFilperPageNum = 0;
  	private ViewFlipper viewFlipper = null;
 	private ImageView imageView1 = null;
 	private ImageView imageView2 = null;
@@ -51,6 +52,7 @@ public class FirstActivity extends Activity{
 	public void onEnterAppClick(View v){
 		Intent intent = new Intent(this,MainActivity.class);
 		startActivity(intent);
+		overridePendingTransition(R.anim.move_in_left_to_right, R.anim.move_out_right_to_left);
 	}
 	
 
@@ -67,15 +69,21 @@ public class FirstActivity extends Activity{
 			endX = event.getX();
 			endY = event.getY();
 			if(startX - endX >= cMoveSpace){
-				viewFlipper.setInAnimation(moveInRightToLeft);
-				viewFlipper.setOutAnimation(moveOutRightToLeft);
-				
-				viewFlipper.showNext();
+				if(viewFilperPageNum < 1){
+					viewFlipper.setInAnimation(moveInRightToLeft);
+					viewFlipper.setOutAnimation(moveOutRightToLeft);
+					
+					viewFlipper.showNext();
+					viewFilperPageNum = 1;
+				}
 			}else if(endX - startX >= cMoveSpace){
-				viewFlipper.setInAnimation(moveInLeftToRight);
-				viewFlipper.setOutAnimation(moveOutLeftToRight);
-				
-				viewFlipper.showPrevious();
+				if(viewFilperPageNum >= 1){
+					viewFlipper.setInAnimation(moveInLeftToRight);
+					viewFlipper.setOutAnimation(moveOutLeftToRight);
+					
+					viewFlipper.showPrevious();
+					viewFilperPageNum = 0;
+				}
 			}
 			return true;
 		}
