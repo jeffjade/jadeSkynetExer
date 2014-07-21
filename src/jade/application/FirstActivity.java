@@ -1,6 +1,8 @@
 package jade.application;
 
 import com.example.jadeskynetexer.R;
+import com.jade.helper.TabHostActivity;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -50,8 +52,11 @@ public class FirstActivity extends Activity{
 	}
 	
 	public void onEnterAppClick(View v){
-		Intent intent = new Intent(this,MainActivity.class);
+		//进入MainActivity界面(默认oneActivity)
+		//Intent intent = new Intent(this,MainActivity.class);
+		Intent intent = new Intent(this,CommunicateActivity.class);
 		startActivity(intent);
+		//切换Activity 添加动画效果
 		overridePendingTransition(R.anim.move_in_left_to_right, R.anim.move_out_right_to_left);
 	}
 	

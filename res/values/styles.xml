@@ -16,5 +16,14 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+    
+    <!-- Self-Definitions-TitleStyle -->
+    <style name="TitleBackgroundColor">
+         <item name="android:background">#00888800</item>
+     </style>
+     <style name="titlestyle" parent="android:Theme" >
+         <item name="android:windowTitleSize">50dip</item>    
+         <item name="android:windowTitleBackgroundStyle">@style/TitleBackgroundColor</item>
+     </style>
 
 </resources>

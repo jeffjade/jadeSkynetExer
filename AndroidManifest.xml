@@ -6,7 +6,10 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="21" />
-
+    
+	<!--允许应用程序完全使用网络--> 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -21,11 +24,46 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="jade.application.MainActivity"></activity>
         
-        <activity android:name="jade.application.OneActivity"></activity>
-        <activity android:name="jade.application.TwoActivity"></activity>
-        <activity android:name="jade.application.ThreeActivity"></activity>
+        <activity 
+            android:label="@string/app_name"
+            android:name="jade.application.MainActivity">
+        </activity>
+        
+        <activity 
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme"
+            android:name="jade.application.CommunicateActivity">
+        </activity>
+        
+        <activity 
+            android:label="@string/app_name"
+            android:theme="@style/titlestyle"
+            android:name="jade.application.OneActivity">
+        </activity>
+        
+        <activity
+            android:label="@string/app_name" 
+            android:name="jade.application.TwoActivity">
+        </activity>
+        
+        <activity
+            android:label="@string/app_name" 
+            android:name="jade.application.ThreeActivity">
+        </activity>
+        
+        <activity android:name="com.jade.helper.HomeGroupActivity"></activity>
+        <activity android:name="com.jade.helper.ContactGroupActivity"></activity>
+        <activity android:name="com.jade.helper.AboutGroupActivity"></activity>
+        
+        <activity android:name="com.jade.helper.AboutActivity"></activity>
+        <activity android:name="com.jade.helper.AnimatedActivity"></activity>
+        <activity android:name="com.jade.helper.ChildActivity"></activity>
+        <activity android:name="com.jade.helper.ContactActivity"></activity>
+      
+        <activity android:name="com.jade.helper.HomeActivity"></activity>
+        <activity android:name="com.jade.helper.TabHostActivity"></activity>
+        <activity android:name="com.jade.helper.TabHostActivity0"></activity>
     </application>
 
 </manifest>
