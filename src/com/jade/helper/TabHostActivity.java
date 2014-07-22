@@ -17,7 +17,7 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.os.Bundle;
-import android.preference.SwitchPreference;
+//import android.preference.SwitchPreference; 14.07.22
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
